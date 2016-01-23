@@ -15,7 +15,7 @@ function drawArray(arr) {
     }
 }
 
-function changeElements(i, j, callback){
+function changeElements(i, j){
     var b = array[i];
     array[i] = array[j];
     array[j] = b;
