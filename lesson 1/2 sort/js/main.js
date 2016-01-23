@@ -1,5 +1,5 @@
 window.onload = function() {
-    drawArray();
-
+    drawArray(array);
     document.getElementById('bubble').onclick = bubble;
 };
+
