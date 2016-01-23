@@ -1,0 +1,6 @@
+{
+  "humans" : [
+    { "name" : "Dima", "steps" : 0 },
+    { "name" : "Ivan", "steps" : 0, "last_name" : "Ponomarev" }
+  ]
+}

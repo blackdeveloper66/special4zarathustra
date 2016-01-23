@@ -101,6 +101,69 @@ function Human() {
     this.steps = 0;
 }
 
-var h = new Human();
+var dima = new Human();
+var ivan = new Human();
 
 //prototype
+Human.prototype.doStep = function() {
+    this.steps++;
+};
+
+dima.doStep();
+/*
+ dima - steps=1
+ ivan - steps=0
+*/
+
+function AnotherHuman() {}
+
+var dima = new AnotherHuman();
+var ivan = new AnotherHuman();
+
+Human.prototype.steps = 0;
+Human.prototype.doStep = function() {
+    this.steps++;
+};
+
+dima.doStep();
+/*
+dima.steps - 1
+ivan.steps - 1
+ */
+
+function AnotherAnotherHuman() {
+    this.steps = 0;
+}
+
+var dima = new AnotherAnotherHuman();
+var ivan = new AnotherAnotherHuman();
+
+Human.prototype.steps = 0;
+Human.prototype.doStep = function() {
+    this.steps++;
+};
+
+dima.doStep();
+
+/*
+ dima.steps - 1
+ ivan.steps - 0
+ */
+
+var dima = new AnotherAnotherHuman();
+var ivan = new AnotherAnotherHuman();
+
+delete dima.steps;
+delete ivan.steps;
+
+Human.prototype.steps = 0;
+Human.prototype.doStep = function() {
+    this.steps++;
+};
+
+dima.doStep();
+
+/*
+ dima.steps - 1
+ ivan.steps - 1
+ */
