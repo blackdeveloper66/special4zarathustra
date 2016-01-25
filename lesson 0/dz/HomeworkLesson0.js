@@ -14,8 +14,19 @@
  fi_9 1 8
  */
 
-var c = 1;
-var d = 1;
+function fic(a,b) {
+    var _a = a;
+    var _b = b;
+    return function(){
+        var c = _a + _b;
+        _a = _b;
+        _b = c;
+        return c;
+    }
+}
+
+var fi_4 = fic(8,7);
+/*
 function fi_0() {
     var a = 1;
     var b = 1;
@@ -73,25 +84,36 @@ f();
  1-1000
  */
 
-var array = [];
-
-for (var i = 0; i < 1001; i++) {
-    array [i] = i+2;
-}
 
 function resh() {
+    var array = [];
     for (var i = 0; i < 1001; i++) {
-        var z = 2 * (i + 2);
-        var x = 3 * (i + 2);
-        var v = 5 * (i + 2);
-        var n = 7 * (i + 2);
-        for (var q = 0; q < 1001; q++) {
-            if (array [q] == z || array [q] == x || array [q] == v || array [q] == n) {
-                array.splice(q, 1);
-            }
+        array[i] = true;
+    }
+    for (var j = 2; j < Math.sqrt(1000); j++) {
+        if (array[j] == false) {
+            continue;
+        }
+
+       /*
+        var c = 2 * j;
+        while (c < 1000) {
+            array[c] = false;
+            c += j;   // c = c +j
+        }
+        */
+
+        for (var c = 2 * j; c < 1000; c += j) {
+            array[c] = false;
         }
     }
-    console.log(array);
+    var result = [];
+    for (var k = 2; k < 1000; k++) {
+        if (array[k]) {
+            result.push(k);
+        }
+    }
+    return result;
 }
 resh();
 
@@ -111,13 +133,11 @@ var result = '';
 function func(a, b) {
     switch (a) {
         case undefined:
-            console.log (result + "not")
-            break
+            return result += "not";
         case 1:
-            console.log (result + " \'++' ")
-            break
+            return result += " \'++' ";
         case 2:
-            c = b || 0
+            return result c = b || 0
             console.log (result + c)
             break
         case 3:
