@@ -1,0 +1,4 @@
+window.Game = {
+    Model      : {},
+    Controller : {}
+};
