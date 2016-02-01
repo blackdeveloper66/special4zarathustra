@@ -1,4 +1,9 @@
 window.Game = {
     Model      : {},
-    Controller : {}
+    Controller : {},
+    View       : {}
+};
+
+window.onload = function() {
+    var game = new Game.Controller.Game();               //запуск игры
 };

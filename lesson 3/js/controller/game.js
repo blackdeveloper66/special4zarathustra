@@ -2,7 +2,9 @@
 
 (function() {                                     //создаем модуль Игра по формуле (function() {})(); чтобы избежать исполнения всего содержимого в глобальном скоупе
     function Game() {                             //описываем содержимое модуля игра
-        this.objects = [];                        //есть массив игровых объектов, пока пустой
+        this.game = new window.Game.Model.Game();
+        this.keyboard = new window.Game.Controller.Keyboard(this.game, document.body);
+        this.view = new window.Game.View.Game(this.game);
 
         this.start();                             //есть какое-то начальное состояние
     }
@@ -12,13 +14,12 @@
         setInterval(function () {
             var n = new Date().getTime();
             this.tick(n - now);
-            this.draw();
             now = n;
         }.bind(this), 0);                         //чтобы избежать исполнения в глобальном контексте исполнения, используй контекст this
     };
 
     Game.prototype.tick = function (ms) {
-        this.objects.forEach(function(obj) { obj.tick(ms); });   //задаем тик для всех объектов внутри игры
+        this.game.player.tick(ms);
     };
 
     window.Game.Controller.Game = Game;                            //прокидываем данные для игры в глобальный скоуп исполнения
