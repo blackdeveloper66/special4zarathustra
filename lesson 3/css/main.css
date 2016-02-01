@@ -9,8 +9,6 @@
 
 .player {
     position         : absolute;
-    left             : 50%;
-    top              : 50%;
     width            : 10%;
     height           : 10%;
     background-image : url('../images/player.png');

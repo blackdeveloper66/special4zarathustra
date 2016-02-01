@@ -20,6 +20,8 @@
 
     Game.prototype.tick = function (ms) {
         this.game.player.tick(ms);
+
+        this.view.tick(ms);
     };
 
     window.Game.Controller.Game = Game;                            //прокидываем данные для игры в глобальный скоуп исполнения
