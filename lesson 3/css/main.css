@@ -1,0 +1,17 @@
+.main {
+    position         : absolute;
+    left             : 0;
+    top              : 0;
+    width            : 100%;
+    height           : 100%;
+    background-color : #000000;
+}
+
+.player {
+    position         : absolute;
+    left             : 50%;
+    top              : 50%;
+    width            : 10%;
+    height           : 10%;
+    background-color : red;
+}
