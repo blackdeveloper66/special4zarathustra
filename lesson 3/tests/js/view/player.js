@@ -1,3 +1,4 @@
+/*
 module('View player');
 
 test('Constructor', function() {                     //Тестируем конструктор, на предмет того, что все начальные условия равны тем что мы хотим
@@ -8,3 +9,4 @@ test('Constructor', function() {                     //Тестируем кон
     equal(player.game, game, 'See valid game');
     equal(player.model, model, 'See valid model');
 });
+*/

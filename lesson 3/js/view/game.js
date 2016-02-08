@@ -1,13 +1,13 @@
 (function() {
-    function Game(model) {
+    function Game(model, element) {
         this.model = model;
 
-        this.element = document.getElementById('game');
+        this.element = element.getElementById('game');
         this.player = new window.Game.View.Player(this, this.model.player);
     }
 
-    Game.prototype.tick = function() {
-        this.player.tick();
+    Game.prototype.tick = function(ms) {
+        this.player.tick(ms);
     };
 
     window.Game.View.Game = Game;
