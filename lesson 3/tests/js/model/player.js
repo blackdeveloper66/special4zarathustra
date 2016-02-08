@@ -70,10 +70,10 @@ test('tick with angles (PI/4, 3/4*PI, 5/4*PI, 7/4*PI)', function() {            
     var dx = Math.cos(Math.PI / 4) * 0.01;
     var dy = Math.sin(Math.PI / 4) * 0.01;
 
-    testAngle('PI/4',   Math.PI / 4,     0.5 + dx, 0.5 - dy);                               //Тестируем каждый угол отдельно
-    testAngle('3/4*PI', Math.PI * 3 / 4, 0.5 - dx, 0.5 - dy);
-    testAngle('5/4*PI', Math.PI * 5 / 4, 0.5 - dx, 0.5 + dy);
-    testAngle('7/4*PI', Math.PI * 7 / 4, 0.5 + dx, 0.5 + dy);
+    testAngle('PI/4',   Math.PI / 4,     0.5 + dx, 0.5 + dy);                               //Тестируем каждый угол отдельно
+    testAngle('3/4*PI', Math.PI * 3 / 4, 0.5 - dx, 0.5 + dy);
+    testAngle('5/4*PI', Math.PI * 5 / 4, 0.5 - dx, 0.5 - dy);
+    testAngle('7/4*PI', Math.PI * 7 / 4, 0.5 + dx, 0.5 - dy);
 
     function testAngle(name, angle, x, y) {                                                  //Setup
         var player = new Game.Model.Player();
@@ -103,7 +103,7 @@ test('y after call tick more then 0', function() {
 
     player.tick(1000000);
 
-    equal(player.y, 0, 'See valid y');
+    equal(player.y, 1, 'See valid y');
 });
 
 test('y after call tick less then 1', function() {
@@ -113,7 +113,7 @@ test('y after call tick less then 1', function() {
 
     player.tick(1000000);
 
-    equal(player.y, 1, 'See valid y');
+    equal(player.y, 0, 'See valid y');
 });
 
 test('angle after call tick less then 2*PI', function() {

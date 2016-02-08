@@ -14,7 +14,6 @@
         attrs.push('top:'  + (this.model.y * 100) + '%');
         attrs.push('transform:rotate(' + (this.model.angle + Math.PI / 2) + 'rad)');
 
-        console.log(attrs.join(';'));
         this.element.setAttribute('style', attrs.join(';'));
     };
 
