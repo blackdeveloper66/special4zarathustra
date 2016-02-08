@@ -21,6 +21,9 @@
             case 39 :
                 this.game.player.state.angle = 'right';
                 break;
+            case 32 :
+                this.game.shot();
+                break;
         }
     };
 

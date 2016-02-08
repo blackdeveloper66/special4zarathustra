@@ -20,6 +20,8 @@ test('Constructor', function() {                     //Тестируем кон
 test('Onkeydown', function() {
     var game = new Game.Model.Game;
     var emitter = {};                                //Пустой объект
+    game.shot = sinon.stub();
+
     var keyboard = new Game.Controller.Keyboard(game, emitter);
 
     // Нажали на кнопку вверх
@@ -37,6 +39,10 @@ test('Onkeydown', function() {
     //Нажали на кнопку вправо
     emitter.onkeydown({ keyCode : 39 });
     equal(game.player.state.angle, 'right', 'See valid player.state after right keydown');
+
+    //Нажали на пробел
+    emitter.onkeydown({ keyCode : 32 });
+    ok(game.shot.calledOnce, 'Game.shot was called');
 });
 
 test('Onkeyup', function() {
