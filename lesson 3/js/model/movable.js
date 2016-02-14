@@ -8,6 +8,7 @@
         var dx = Math.abs(Math.cos(this.angle) * velocity * ms);                                   //выносим изменения координат для сокращения след. кода
         var dy = Math.abs(Math.sin(this.angle) * velocity * ms);
 
+        if (this.angle == 0) { dx = dx; dy = 0; }
         if (0 < this.angle && this.angle < Math.PI / 2) { dx = dx; dy = dy; }                  //прописываем зависимость изменения координат от угла поворота игрока
         if (this.angle == Math.PI / 2) { dx = 0; dy = dy; }
         if (Math.PI / 2 < this.angle && this.angle < Math.PI) { dx = -dx; dy = dy; }

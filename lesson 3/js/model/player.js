@@ -22,7 +22,7 @@
     function rotate(player, ms) {                  //описываем вращение игрока вокруг своей оси
         if (player.state.angle != 'left' && player.state.angle != 'right') { return; }                //если не поворачиваемся ни вправо, ни влево, то ничего не делай
 
-        player.angle += (player.state.angle == 'left' ? 1 : -1) * ANGLE_VELOCITY * ms;                //если мы поворачиваемся против часовой стрелки, то угол увеличивается и наоборот
+        player.angle += (player.state.angle == 'right' ? 1 : -1) * ANGLE_VELOCITY * ms;                //если мы поворачиваемся против часовой стрелки, то угол увеличивается и наоборот
 
         while (player.angle < 0) { player.angle += Math.PI * 2; }                                     //если угол становится отрицательным, то накинь 2 Пи , для чистоты расчетов
         while (player.angle > Math.PI * 2) { player.angle -= Math.PI * 2; }                           //если угол становится больше 2 Пи, то вычти из него 2 Пи , для чистоты расчетов

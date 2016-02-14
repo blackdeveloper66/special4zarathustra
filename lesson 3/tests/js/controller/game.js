@@ -1,14 +1,14 @@
 module('Controller game');
 
 test('Constructor', function() {
-    var game = new Game.Controller.Game();
+    var game = new Game.Controller.Game();             //Setup; создаем объект game являющийся экземпляром контроллера Game
 
-    ok(game.model instanceof Game.Model.Game, 'See valid game model');
+    ok(game.model instanceof Game.Model.Game, 'See valid game model');       //Assert; game.model того же типа что и Game.Model.Game
     ok(game.view instanceof Game.View.Game, 'See valid game view');
     ok(game.keyboard instanceof Game.Controller.Keyboard, 'See valid keyboard controller');
     ok(game.intervalId != null && game.intervalId != undefined, 'See intervalId');
 
-    game.stop();
+    game.stop();          // Останавливаем выполнения данного теста, для чистоты дальнейших экспериментов
 });
 
 test('setInterval', function(assert) {
