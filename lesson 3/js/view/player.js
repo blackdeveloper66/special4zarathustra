@@ -1,9 +1,9 @@
 (function() {
-    function Player(game, model) {
+    function Player(game, model, element) {
         this.game  = game;
         this.model = model;
 
-        this.element = document.createElement('div');
+        this.element = element.createElement('div');
         this.element.setAttribute('class', 'player');
         this.game.element.appendChild(this.element);
     }

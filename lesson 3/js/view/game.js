@@ -3,7 +3,7 @@
         this.model = model;
 
         this.element = element.getElementById('game');
-        this.player = new window.Game.View.Player(this, this.model.player);
+        this.player = new window.Game.View.Player(this, this.model.player, element);
     }
 
     Game.prototype.tick = function(ms) {

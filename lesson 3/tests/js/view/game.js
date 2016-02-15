@@ -10,7 +10,8 @@ test('Constructor', function() {                     //Тестируем кон
     var model            = {};
     var element          = { appendChild : function() { } };
     var documentElement  = {
-        getElementById : sinon.stub().returns(element)
+        getElementById : sinon.stub().returns(element),
+        createElement  : sinon.stub().returns({ setAttribute : function() { } })
     };
 
     var game  = new Game.View.Game(model, documentElement);
@@ -26,7 +27,8 @@ test('tick', function() {
     var model            = {};
     var element          = { appendChild : function() { } };
     var documentElement  = {
-        getElementById : sinon.stub().returns(element)
+        getElementById : sinon.stub().returns(element),
+        createElement  : sinon.stub().returns({ setAttribute : function() { } })
     };
     var game = new Game.View.Game(model, documentElement);
     game.player.tick = sinon.stub();
