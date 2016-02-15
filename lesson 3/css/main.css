@@ -8,10 +8,20 @@
 }
 
 .player {
-    position         : absolute;
-    width            : 10%;
-    height           : 10%;
-    background-image : url('../images/player.png');
+    position            : absolute;
+    width               : 10%;
+    height              : 10%;
+    background-image    : url('../images/player.png');
+    background-repeat   : no-repeat;
+    background-size     : contain;
+    background-position : center center;
+}
+
+.shot {
+    position            : absolute;
+    width               : 2%;
+    height              : 2%;
+    background-image    : url('../images/shot.png');
     background-repeat   : no-repeat;
     background-size     : contain;
     background-position : center center;

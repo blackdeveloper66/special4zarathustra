@@ -1,5 +1,14 @@
+TEST!
+Ref View
+Shots destructor
+   - display
+   - game.shots (model, view)
+
+============================================
+
 http://sinonjs.org/
 https://qunitjs.com/
 http://javascript.ru/tutorial/object/inheritance#nasledovanie-na-klassah-funkciya-extend
 
 TESTS!
+
